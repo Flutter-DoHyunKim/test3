@@ -27,9 +27,10 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: _pages[_selectedIndex],
       bottomNavigationBar: SizedBox(
-        height: 50,
+        height: 84,
         child: BottomNavigationBar(items: const [
            BottomNavigationBarItem(
           icon: ImageIcon(AssetImage('assets/icons/home.png')),

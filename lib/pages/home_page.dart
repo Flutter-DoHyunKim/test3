@@ -4,6 +4,7 @@ import 'package:test3/widgets/card_widget.dart';
 import 'package:test3/widgets/daily_widget.dart';
 import 'package:test3/widgets/popular_widget.dart';
 import 'package:test3/widgets/recommend_widget.dart';
+import 'package:test3/widgets/seasonal_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -31,6 +32,8 @@ class HomePage extends StatelessWidget {
             const PopularWidget(),
             subSelectionTitle(context, 'Recommended for you'),
             const RecommendWidget(),
+            subSelectionTitle(context, 'Seasonal bundles'),
+            const SeasonalWidget(),
             const SizedBox(
               height: 48,
             )

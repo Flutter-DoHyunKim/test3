@@ -16,6 +16,13 @@ const List<String> popularStrings=[
   'Seeds ',
   'Dalgona Dalgona Dalgona',
 ];
+const List<String> seasonalStrings=[
+  'Mooncakes',
+  'Dry fruits',
+  'Nuts',
+  'Dry fruits',
+  'Nuts',
+];
 const List<String> popularSubStrings=[
   'Korean Style',
   'For afternoon Style',

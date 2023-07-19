@@ -1,15 +1,17 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:test3/const.dart';
 
-class PopularWidget extends StatelessWidget {
-  const PopularWidget({
+class SeasonalWidget extends StatelessWidget {
+  const SeasonalWidget({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 227,
+      height: 203,
       padding: const EdgeInsets.symmetric(vertical: spacingM),
       child: ListView.separated(
           padding: const EdgeInsets.symmetric(horizontal: spacingM),
@@ -21,15 +23,41 @@ class PopularWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    padding: EdgeInsets.zero,
-                    margin: EdgeInsets.zero,
-                    height: 120,
-                    decoration: BoxDecoration(
-                      image: const DecorationImage(
-                          image: NetworkImage('https://picsum.photos/300'),
-                          fit: BoxFit.cover),
-                      borderRadius: BorderRadius.circular(6),
+                  ClipRRect(
+                    child: Container(
+                      height: 120,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(6),
+                          border: Border.all(
+                              width: 1,
+                              color: const Color.fromRGBO(237, 236, 237, 1))),
+                      child: Padding(
+                        padding: const EdgeInsets.all(spacingBase),
+                        child: GridView.builder(
+                            physics: const NeverScrollableScrollPhysics(),
+                            padding: EdgeInsets.zero,
+                            itemCount: 4,
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2, //1개 행 개수
+                              childAspectRatio: 1, //가로/세로
+                              mainAxisSpacing: spacingBase, //horizontal Padding
+                              crossAxisSpacing: spacingBase, //vertical Padding
+                            ),
+                            itemBuilder: (BuildContext context, int index) {
+                              return ClipRRect(
+                                borderRadius: BorderRadius.circular(4),
+                                child: SizedBox(
+                                  width: 54,
+                                  height: 54,
+                                  child: Image.network(
+                                    'https://picsum.photos/${Random().nextInt(9)*100}',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              );
+                            }),
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -37,27 +65,15 @@ class PopularWidget extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Image.asset('assets/icons/item1.png'),
-                      const SizedBox(
-                        width: 6,
-                      ),
                       Expanded(
                           child: Text(
-                        popularStrings[index],
+                        seasonalStrings[index],
                         style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             color: const Color.fromRGBO(85, 77, 86, 1)),
                         overflow: TextOverflow.ellipsis,
                         maxLines: 1,
                       ))
                     ],
-                  ),
-                  const SizedBox(height: spacingBase),
-                  Text(
-                    popularSubStrings[index],
-                    style: Theme.of(context).textTheme.bodyMedium,
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
-                    textAlign: TextAlign.start,
                   ),
                   SizedBox(
                     height: 21,

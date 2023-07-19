@@ -10,7 +10,7 @@ class RecommendWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 227,
-      padding:const EdgeInsets.symmetric(vertical: spacingM),
+      padding: const EdgeInsets.symmetric(vertical: spacingM),
       child: ListView.separated(
           padding: const EdgeInsets.symmetric(horizontal: spacingM),
           scrollDirection: Axis.horizontal,
@@ -27,8 +27,7 @@ class RecommendWidget extends StatelessWidget {
                     height: 120,
                     decoration: BoxDecoration(
                       image: const DecorationImage(
-                          image: NetworkImage(
-                              'https://picsum.photos/200'),
+                          image: NetworkImage('https://picsum.photos/200'),
                           fit: BoxFit.cover),
                       borderRadius: BorderRadius.circular(6),
                     ),
@@ -40,16 +39,12 @@ class RecommendWidget extends StatelessWidget {
                     children: [
                       Expanded(
                           child: Text(
-                            popularStrings[index],
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyLarge!
-                                .copyWith(
-                                color: const Color.fromRGBO(
-                                    85, 77, 86, 1)),
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 1,
-                          ))
+                        popularStrings[index],
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                            color: const Color.fromRGBO(85, 77, 86, 1)),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                      ))
                     ],
                   ),
                   const SizedBox(height: spacingBase),
@@ -74,8 +69,7 @@ class RecommendWidget extends StatelessWidget {
                           ),
                           Text(
                             popularStarStrings[index],
-                            style:
-                            Theme.of(context).textTheme.bodySmall,
+                            style: Theme.of(context).textTheme.bodySmall,
                           ),
                           const SizedBox(
                             width: 9,
@@ -86,15 +80,12 @@ class RecommendWidget extends StatelessWidget {
                           ),
                           Text(
                             popularTimeStrings[index],
-                            style:
-                            Theme.of(context).textTheme.bodySmall,
+                            style: Theme.of(context).textTheme.bodySmall,
                           ),
                         ]),
                       ],
                     ),
                   ),
-
-
                 ],
               ),
             );
