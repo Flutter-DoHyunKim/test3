@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test3/const.dart';
 import 'package:test3/widgets/card_widget.dart';
 import 'package:test3/widgets/daily_widget.dart';
+import 'package:test3/widgets/mystery_widget.dart';
 import 'package:test3/widgets/popular_widget.dart';
 import 'package:test3/widgets/recommend_widget.dart';
 import 'package:test3/widgets/seasonal_widget.dart';
@@ -34,6 +35,8 @@ class HomePage extends StatelessWidget {
             const RecommendWidget(),
             subSelectionTitle(context, 'Seasonal bundles'),
             const SeasonalWidget(),
+            subSelectionTitle(context, 'Mystery bundles'),
+            const MysteryWidget(),
             const SizedBox(
               height: 48,
             )

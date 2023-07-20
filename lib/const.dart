@@ -23,6 +23,20 @@ const List<String> seasonalStrings=[
   'Dry fruits',
   'Nuts',
 ];
+const List<String> mysteryStrings=[
+  'On diet',
+  'Date night',
+  'Picnics',
+  'On diet',
+  'Date night',
+];
+const List<String> mysterySubStrings=[
+  '5-snack pack',
+  '6-snack pack',
+  '8-snack pack',
+  '9-snack pack',
+  '10-snack pack',
+];
 const List<String> popularSubStrings=[
   'Korean Style',
   'For afternoon Style',
